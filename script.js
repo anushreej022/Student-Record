@@ -184,12 +184,11 @@ function deleteCell(toDel) {
   let dl = toDel.parentNode.parentNode.parentNode;
   var studNo = Math.round(toDel.parentNode.parentNode.rowIndex / 2);
 
-  // Adjust the student numbers for subsequent rows
+  // Adjust the student and teacher numbers for subsequent rows
   for (var i = toDel.parentNode.parentNode.rowIndex + 2; i < dl.rows.length; i += 2) {
     var currentStudentNumber = Math.round(i / 2);
     dl.rows[i].cells[1].innerHTML = 'Student ' + (currentStudentNumber - 1);
-    d1.rows[i].cells[2].innerHTML = 'Teacher ' + (currentNumber + 1);
-
+    dl.rows[i].cells[2].innerHTML = 'Teacher ' + (currentStudentNumber - 1);
   }
 
   // Remove the rows
