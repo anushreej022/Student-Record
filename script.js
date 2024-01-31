@@ -177,6 +177,11 @@ function addNewRow() {
   table.appendChild(tableBody);
 
   alert("Record added successfully!!")
+
+  // Alert the user if the record is not added successfully
+  if (!table.contains(newRow)) {
+    alert("Error adding new row. Please try again.");
+  }
 }
 
 // Function to delete a student row
