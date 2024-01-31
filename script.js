@@ -256,9 +256,37 @@ function reveal(details) {
 
 }
 
-//function for edit button prompt
+function editCell() {
+  var customPromptOverlay = document.getElementById('customPromptOverlay');
+  customPromptOverlay.style.display = 'flex';
+}
+
+// Function to handle the "Update" button click
+function updateDetails() {
+  var input = document.getElementById('editInput').value;
+  
+  // Implement the logic for updating details with the value in the 'input' variable
+
+  // Close the custom prompt
+  closeCustomPrompt();
+}
+
+// Function to handle the "Cancel" button click
+function cancelEdit() {
+  // Close the custom prompt
+  closeCustomPrompt();
+}
+
+// Function to close the custom prompt
+function closeCustomPrompt() {
+  var customPromptOverlay = document.getElementById('customPromptOverlay');
+  customPromptOverlay.style.display = 'none';
+}
+/*//function for edit button prompt
 function editCell(details) {
   console.log(details);
   prompt("Edit the details");
   
-}
+}*/
+
+
