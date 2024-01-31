@@ -176,10 +176,10 @@ function addNewRow() {
   tableBody.appendChild(newRow);
   table.appendChild(tableBody);
 
-  alert("Record added successfully!!")
-
-  // Alert the user if the record is not added successfully
-  if (!table.contains(newRow)) {
+  // Check if the new row is added successfully
+  if (table.contains(newRow)) {
+    alert("Student " + (noOfRows) + " record added successfully!!");
+  } else {
     alert("Error adding new row. Please try again.");
   }
 }
@@ -261,14 +261,16 @@ function editCell() {
   customPromptOverlay.style.display = 'flex';
 }
 
+
 // Function to handle the "Update" button click
 function updateDetails() {
   var input = document.getElementById('editInput').value;
-  
-  // Implement the logic for updating details with the value in the 'input' variable
 
   // Close the custom prompt
   closeCustomPrompt();
+
+  // Display success message
+  alert("Student data updated successfully!!");
 }
 
 // Function to handle the "Cancel" button click
@@ -288,5 +290,4 @@ function editCell(details) {
   prompt("Edit the details");
   
 }*/
-
-
+ 
