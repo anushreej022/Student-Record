@@ -29,7 +29,6 @@ This project is a simple Student Management System implemented using HTML, CSS, 
 
 6. **updateDetails()**
    - Handles the "Update" button click in the custom prompt overlay.
-   - Updates details based on the provided input (yet to be implemented).
    - Alerts the user about the successful update.
 
 7. **cancelEdit()**
