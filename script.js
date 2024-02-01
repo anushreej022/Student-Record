@@ -258,6 +258,22 @@ function reveal(details) {
 
 function editCell() {
   var customPromptOverlay = document.getElementById('customPromptOverlay');
+  var promptText = document.getElementById('promptText');
+  var editInput = document.getElementById('editInput');
+
+  // Get the row of the clicked "Edit" button
+  var row = event.target.parentNode.parentNode;
+  
+  // Get the student number from the row
+  var studentNumber = row.cells[1].textContent.split(' ')[1];
+
+  // Set prompt text
+  promptText.textContent = 'Edit the details of Student ' + studentNumber;
+
+  // Clear input field
+  editInput.value = '';
+
+  // Display the custom prompt
   customPromptOverlay.style.display = 'flex';
 }
 
@@ -266,11 +282,14 @@ function editCell() {
 function updateDetails() {
   var input = document.getElementById('editInput').value;
 
+  // Get the student number from the prompt text
+  var studentNumber = document.getElementById('promptText').textContent.split(' ')[5];
+
   // Close the custom prompt
   closeCustomPrompt();
 
   // Display success message
-  alert("Student data updated successfully!!");
+  alert("Student " + studentNumber + " data updated successfully!!");
 }
 
 // Function to handle the "Cancel" button click
@@ -284,6 +303,7 @@ function closeCustomPrompt() {
   var customPromptOverlay = document.getElementById('customPromptOverlay');
   customPromptOverlay.style.display = 'none';
 }
+
 /*//function for edit button prompt
 function editCell(details) {
   console.log(details);
